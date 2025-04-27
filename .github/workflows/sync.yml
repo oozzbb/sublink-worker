@@ -10,7 +10,10 @@ jobs:
     name: Sync latest commits from upstream repo
     runs-on: ubuntu-latest
     if: ${{ github.event.repository.fork }}
-
+    permissions:
+      contents: write
+      workflows: write  # 允许修改工作流文件
+      
     steps:
       - uses: actions/checkout@v4
 
